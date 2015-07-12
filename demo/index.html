@@ -3,30 +3,29 @@
 <head>
   <meta charset="utf-8"/>
   <title>Viewport Changer Demo</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-  <link rel="stylesheet" href="../index.css"/>
-
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style>
+    .viewport-changer a {
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      margin: 5px 10px;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="viewport-widget">
-    <button data-viewport="desktop" class="viewport-desktop">Desktop</button>
-    <button data-viewport="mobile" class="viewport-mobile">Mobile</button>
-    <button data-viewport="tablet" class="viewport-tablet">Tablet</button>
+  <div data-reload="true" data-target="targetIframe" data-default-viewport="desktop" class="viewport-changer">
+    <a href="#" class="fa fa-desktop fa-3x" data-viewport="desktop"></a>
+    <a href="#" class="fa fa-mobile fa-3x" data-viewport="mobile"></a>
+    <a href="#" class="fa fa-tablet fa-3x" data-viewport="tablet"></a>
   </div>
   <iframe id="targetIframe" src="http://ember-vcl.github.io/drawer/demo/">
     Iframe is not supported
   </iframe>
 
   <script src="../index.js" type="text/javascript"></script>
-  <script>
-    new ViewportChanger({
-      target: document.getElementById('targetIframe'),
-      defaultViewport: 'desktop',
-      container: document.getElementsByClassName('viewport-widget')[0]
-    });
-  </script>
 </body>
 
 </html>

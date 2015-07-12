@@ -1,8 +1,8 @@
 var ViewportChanger = function(opts) {
-  this.target = opts.target;
-  this.defaultViewport = opts.defaultViewport;
-  this.container = opts.container;
-  this.reload = true;
+  this.target = opts.target || null;
+  this.defaultViewport = opts.defaultViewport || "desktop";
+  this.container = opts.container || null
+  this.reload = opts.reload || false;
   this.init();
 }
 
@@ -31,4 +31,15 @@ ViewportChanger.prototype.getSizesFor = function(viewport) {
     'tablet': ['1024px', '768px']
   }
   return sizes[viewport];
+}
+
+var classes = document.getElementsByClassName('viewport-changer');
+for (var i = 0; i < classes.length; i++) {
+  var container = classes[i];
+  var opts = {
+    target: document.getElementById(container.dataset.target),
+    defaultViewport: container.dataset.defaultViewport,
+    container: container
+  }
+  var changer = new ViewportChanger(opts);
 }

@@ -1,0 +1,25 @@
+{
+  "name": "viewport-changer",
+  "version": "0.1.0",
+  "description": "A simple drop-in script that resizes the specified iframe on the page to emulate desktop/mobile/tablet devices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrKoN/viewport-changer.git"
+  },
+  "keywords": [
+    "emulator",
+    "iframe",
+    "preview",
+    "resize"
+  ],
+  "author": "Oleksii Rudenko <alexei.rudenko@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OrKoN/viewport-changer/issues"
+  },
+  "homepage": "https://github.com/OrKoN/viewport-changer#readme"
+}
