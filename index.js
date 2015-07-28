@@ -12,8 +12,10 @@ ViewportChanger.prototype.init = function() {
 }
 
 ViewportChanger.prototype.onClick = function(e) {
+  e.preventDefault();
   var viewport = e.target.dataset.viewport;
   this.resize.apply(this, this.getSizesFor(viewport));
+  return false;
 }
 
 ViewportChanger.prototype.resize = function(width, height) {
