@@ -33,13 +33,20 @@ ViewportChanger.prototype.getSizesFor = function(viewport) {
   return sizes[viewport];
 }
 
-var classes = document.getElementsByClassName('viewport-changer');
-for (var i = 0; i < classes.length; i++) {
-  var container = classes[i];
-  var opts = {
-    target: document.getElementById(container.dataset.target),
-    defaultViewport: container.dataset.defaultViewport,
-    container: container
+function attachListeners() {
+  var classes = document.getElementsByClassName('viewport-changer');
+  for (var i = 0; i < classes.length; i++) {
+    var container = classes[i];
+    var opts = {
+      target: document.getElementById(container.dataset.target),
+      defaultViewport: container.dataset.defaultViewport,
+      container: container
+    }
+    var changer = new ViewportChanger(opts);
   }
-  var changer = new ViewportChanger(opts);
 }
+attachListeners();
+new MutationObserver(attachListeners.bind(this)).observe(document, {
+  childList: true,
+  subtree: true
+});
