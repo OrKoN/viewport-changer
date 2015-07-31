@@ -43,3 +43,9 @@ for (var i = 0; i < classes.length; i++) {
   }
   var changer = new ViewportChanger(opts);
 }
+
+attachListeners();
+new MutationObserver(attachListeners.bind(this)).observe(document, {
+  childList: true,
+  subtree: true
+});
